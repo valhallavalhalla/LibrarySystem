@@ -4,7 +4,8 @@
 <glassfish-web-app>
     <context-root>/LibrarySystem</context-root>
     <resource-ref>
-			<res-ref-name>jdbc/LibraryDB</res-ref-name>
-			<jndi-name>jdbc/LibraryDB</jndi-name>
-		</resource-ref>
+   		<res-ref-name>jdbc/LibraryDB</res-ref-name>
+		<jndi-name>jdbc/LibraryDB</jndi-name>
+	</resource-ref>
+	<parameter-encoding default-charset="UTF-8"/>
 </glassfish-web-app>

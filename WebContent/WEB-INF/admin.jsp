@@ -26,21 +26,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="ordersToProcess" items="${requestScope.ordersToProcess}">
-				<c:set var="order" value="${ordersToProcess.key}"/>
-				<c:set var="additionalInfo"  value="${ordersToProcess.value}"/>
-				<c:forEach var="entry" items="${additionalInfo}">
-					<c:set var="user" value="${entry.key}"/>
-					<c:set var="book" value="${entry.value}"/>
+				<c:forEach var="order" items="${requestScope.ordersToProcess}">
 						<tr>
 							<td>${order.id}</td>
-							<td>${user.login}</td>
-							<td>${book.title}</td>
-							<td>${book.author}</td>
+							<td>${order.user.login}</td>
+							<td>${order.book.title}</td>
+							<td>${order.book.author}</td>
 							<td>
 								<form action="ControllerServlet" method="post">
 									<input name="idOrder" value="${order.id}" type="hidden"/>
-									<input name="idBook" value="${book.id}" type="hidden"/>
+									<input name="idBook" value="${order.book.id}" type="hidden"/>
 									<button type="submit" value="CONFIRM_ORDER" name="command" class="btn btn-default">
 									Confirm order</button>
 									<button type="submit" value="REFUSE_ORDER" name="command" class="btn btn-default">
@@ -48,7 +43,6 @@
 								</form>
 							</td>
 						</tr>
-					</c:forEach>
 				</c:forEach>
 			</tbody>
 		</table>

@@ -18,7 +18,7 @@
 	<body>
 		<div align="center">
 			<h1>Welcome to Library System</h1>
-			<h3>X X X</h3>
+
 			<h2>
 				<a href="login">Log in</a>
 				<a> or </a>

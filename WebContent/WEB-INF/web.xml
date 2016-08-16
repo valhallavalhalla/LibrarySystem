@@ -53,15 +53,15 @@
 		<description></description>
 		<display-name>ControllerServlet</display-name>
 		<servlet-name>ControllerServlet</servlet-name>
-		<servlet-class>com.epam.project.controller.ControllerServlet</servlet-class>
+		<servlet-class>com.library.controller.ControllerServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ControllerServlet</servlet-name>
 		<url-pattern>/ControllerServlet</url-pattern>
 	</servlet-mapping>
 		<filter>
-	    <filter-name>AuthenticationFilter</filter-name>
-	    <filter-class>com.epam.project.filter.AuthenticationFilter</filter-class>
+	    <filter-name>AuthorizationFilter</filter-name>
+	    <filter-class>com.library.filter.AuthorizationFilter</filter-class>
 	    <init-param>
 	      <param-name>login</param-name>
 	      <param-value>/login</param-value>
@@ -76,7 +76,7 @@
 	    </init-param>
 	  </filter>
 	  <filter-mapping>
-	    <filter-name>AuthenticationFilter</filter-name>
+	    <filter-name>AuthorizationFilter</filter-name>
 	    <url-pattern>/*</url-pattern>
   </filter-mapping>
 	<resource-ref>

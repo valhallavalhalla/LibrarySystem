@@ -31,13 +31,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="userBookOrder" items="${requestScope.userBookOrders}">
-				<c:set var="order" value="${userBookOrder.key}"/>
-				<c:set var="book" value="${userBookOrder.value}"/>
+				<c:forEach var="order" items="${requestScope.userOrders}">
 					<tr>
 						<td>${order.id}</td>
-						<td>${book.author}</td>
-						<td>${book.title}</td>
+						<td>${order.book.author}</td>
+						<td>${order.book.title}</td>
 						<c:if test="${not order.isProcessed}">
 						<td>Waiting to confirm</td>
 						</c:if>
@@ -46,7 +44,7 @@
 						<td>
 							<form action="ControllerServlet" method="post">
 								<input name="idOrder" value="${order.id}" type="hidden"/>
-								<input name="idBook" value="${book.id}" type="hidden"/>		
+								<input name="idBook" value="${order.book.id}" type="hidden"/>		
 								<button type="submit" value="RETURN_BOOK" name="command" class="btn btn-default">
 								Return the book</button>
 							</form>

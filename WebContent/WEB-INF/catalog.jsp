@@ -32,8 +32,9 @@
 						<td>${book.amountAvailable}</td>
 						<td>
 						<p> <form action="ControllerServlet" method="post">
-								<input name="idBook" value="${book.id}" type="hidden"/>	
-								<button type="submit" name="command" value="ORDER_BOOK" class="btn btn-default">
+						
+							<input name="bookId" value="${book.id}" type="hidden"/>	
+						 	<button type="submit" name="command" value="ORDER_BOOK" class="btn btn-default">
 								Make order</button>
 							</form>
 						</td>
